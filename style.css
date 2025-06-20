@@ -1,0 +1,147 @@
+:root {
+  --clr-rose: #ff2056;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 256px;
+  height: 256px;
+}
+
+.form__container {
+  width: 400px;
+  position: absolute;
+  padding: 0 60px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--clr-rose);
+  font-weight: 800;
+}
+
+.form__input-container {
+  position: relative;
+  margin-top: 1.5em;
+}
+
+.form__input {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-radius: 40px;
+  outline: none;
+  border: 3px solid var(--clr-rose);
+  background-color: transparent;
+  color: white;
+  padding: 0 20px;
+}
+
+.form__label {
+  pointer-events: none;
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 20px;
+  background-color: rgb(27, 27, 27);
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+
+.form__input:focus ~ label {
+  top: 0;
+  font-size: 0.8em;
+  padding: 0 0.4em;
+  color: var(--clr-rose);
+}
+
+.form__forgot-password {
+  font-size: 0.8em;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.form__forgot-password a {
+  color: white;
+  text-decoration: none;
+}
+
+.form__forgot-password a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form__login {
+  width: 100%;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  height: 50px;
+  background-color: var(--clr-rose);
+  cursor: pointer;
+  transition: color 0.3s ease-in, background-color 0.2s ease-in,
+    border 0.25s ease-in;
+}
+
+.form__login:hover {
+  background-color: transparent;
+  border: 3px solid var(--clr-rose);
+  color: white;
+}
+
+.form__signup {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.form__signup a {
+  color: var(--clr-rose);
+  text-decoration: none;
+}
+
+.form__signup a:hover {
+  text-decoration: underline;
+}
+
+.container span {
+  position: absolute;
+  left: 0;
+  background-color: rgb(39, 39, 39);
+  width: 30px;
+  height: 6px;
+  border-radius: 8px;
+  transform: scale(2) rotate(calc(var(--i) * (360deg / 50)));
+  transform-origin: 128px;
+  animation: loading 3s calc(var(--i) * (3s / 50)) linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-color: var(--clr-rose);
+  }
+  30% {
+    background-color: rgb(54, 54, 54);
+  }
+}
